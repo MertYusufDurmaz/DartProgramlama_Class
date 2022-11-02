@@ -1,0 +1,43 @@
+void main(List<String> args) {
+  var urun = new Product();
+  urun.BarCode="XXC555";
+  urun.Name="Makarna";
+  urun.Price=9999;
+  urun.Category="Bakliyat";
+  urun.Brand="Barilla";
+  
+  print(urun.Sil("XXC555"));
+  print(urun.Guncelle("XXC555"));
+  print(urun.Ekle());
+  print(urun.araclar());
+}
+
+class Product {
+    var BarCode;
+    var Name;
+    var Price;
+    var Category;
+    var Brand;
+  
+ String Sil(String silinecekBarkod)
+  {
+    return "$silinecekBarkod Barkodlu Ürün Silindi";
+  }
+  
+  String Guncelle(String guncellenecekBarkod)
+  {
+    return "$guncellenecekBarkod Barkodlu Ürün Güncellendi";
+  }
+  
+ 
+  String Ekle([bool eklendiMi = true])
+  {
+     return eklendiMi
+        ? "Ürün Eklendi."
+        : "Ürün Eklenmedi";
+  }
+  List araclar({String BarCode = "XXC555",String Name = "Makarna",int Price = 9999,String Category = "Bakliyat",String Brand = "Barilla"}) {
+  return [BarCode,Name,Price,Category,Brand];
+}
+ 
+}
